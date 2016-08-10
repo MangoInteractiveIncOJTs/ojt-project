@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+<body>
+	
+<a class="btn" data-open="popup-1" href="#">Open</a>
+ 
+<div class="popup" data-popup="popup-1">
+    <div class="popup-inner">
+       	<table>
+       		<tr>	
+       			<td class="border_me"><a >Market Area</a></td>
+       			<td class="border_me"><a >Days of Weeks</a></td>
+       			<td class="border_me"><a ></a>hours</a></td>
+       			<td class="border_me"><a ></a>Starting pay</td>
+       			<td class="border_me"><a ></a>Need</td>
+       		</tr>
+       		<tr>
+       			<td class="border_me"><a >Market Area #1</a></td>
+       			<td class="border_me"><a >M-W-F</a></td>
+       			<td class="border_me"><a >5 hours</a></td>
+       			<td class="border_me"><a >15$/Hour</a></td>
+       			<td><a >immediate</a></td>
+       		</tr>
+       		<tr>
+       			<td><a >Market Area #2</a></td>
+       			<td><a >M-W-F</a></td>
+       			<td><a >3 hours</a></td>
+       			<td><a >15$/Hour</a></td>
+       			<td><a >immediate</a></td>
+       		</tr>
+       		<tr>
+       			<td><a >Market Area #3</a></td>
+       			<td><a >M-W-F</a></td>
+       			<td><a >4 hours</a></td>
+       			<td><a >10%/Hour</a></td>
+       			<td><a >immediate</a></td>
+       		</tr>
+ 
+       	</table>
+        <p><a data-close="popup-1" href="#">Close</a></p>
+        <a class="popup-close" data-close="popup-1" href="#">x</a>
+    </div>
+</div>
+		
+</body>
+<script type="text/javascript">
+$(function() {
+    $('.btn').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-open');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+ 
+        e.preventDefault();
+    });
+ 
+    $('[data-close]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-close');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+ 
+        e.preventDefault();
+    });
+});
+</script>
+</html>
